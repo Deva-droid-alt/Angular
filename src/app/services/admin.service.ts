@@ -96,7 +96,7 @@ private admUrl = 'http://127.0.0.1:8000/api/'; // Ensure the correct API endpoin
 
   // Close a travel request
   closeRequest(requestId: number): Observable<any> {
-    return this.http.post(`${this.admUrl}requests/${requestId}/close`, {});
+    return this.http.post(`${this.admUrl}requests/${requestId}/close`, {}, { headers: this.getHeaders()});
   }
 
         /** 🔹 Get details of a specific travel request */
